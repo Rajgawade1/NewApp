@@ -929,7 +929,7 @@ let DataSubmitService = class DataSubmitService {
     }
     generateResume(resumeData) {
         //return this.http.post(this.baseUrl+'/generate_resume/',resumeData,{headers:this.httpHeaders1},)   
-        return this.http.get(this.baseUrl + '/generate_resume/?userId=9', { headers: this.httpHeaders1 });
+        return this.http.get(this.baseUrl + '/generate_resume/?userId='+this.globals.userId, { headers: this.httpHeaders1 });
     }
     submitPersoanlData(personalData) {
         return this.http.put(this.baseUrl + '/personalinfo/' + personalData.id + '/', personalData, { headers: this.httpHeaders }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["retry"])(0), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["catchError"])(this.handleError));
